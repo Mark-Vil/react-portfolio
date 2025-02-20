@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/Header.css';
 
-const Header = () => {
+const Header = ({ onAboutClick }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    onAboutClick();
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <header className="header">
-      <button className="mobile-menu">
+       <button className={`mobile-menu ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <div className="nav-container">
+      <div className={`nav-container ${isMenuOpen ? 'show' : ''}`}>
         <nav className="social-nav">
 
           <div className="social-links">
@@ -38,12 +49,12 @@ const Header = () => {
 </div>
         </nav>
 
-<nav className="main-nav">
-  <NavLink to="/" end>Home</NavLink>
-  <NavLink to="/about">About</NavLink>
-  <NavLink to="/skills">Skills</NavLink>
-  <NavLink to="/projects">Projects</NavLink>
-</nav>
+        <nav className={`main-nav ${isMenuOpen ? 'show' : ''}`}>
+          <NavLink to="/" end onClick={() => setIsMenuOpen(false)}>Home</NavLink>
+          <a href="#about" onClick={handleAboutClick}>About</a>
+          <NavLink to="/skills" onClick={() => setIsMenuOpen(false)}>Skills</NavLink>
+          <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
+        </nav>
       </div>
 
     </header>

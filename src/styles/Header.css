@@ -14,26 +14,42 @@
   /* border: 1px solid red; */
 }
   
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: none;    
-  }
-  
-  .mobile-menu span {
-    display: block;
-    height: 3px;
-    width: 24px;
-    background: #1B1B1B;
-    border-radius: 2px;
-    transition: all 0.3s ease-out;
-  }
-  
-  .mobile-menu span:nth-child(2) {
-    margin: 4px 0;
-  }
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem; 
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.mobile-menu span {
+  width: 2rem;
+  height: 0.25rem;
+  background: #1B1B1B;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  transform-origin: center;
+}
+
+.mobile-menu.active span:first-child {
+  transform: translateY(0.625rem) rotate(45deg);
+}
+
+.mobile-menu.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(1rem);
+}
+
+.mobile-menu.active span:nth-child(3) {
+  transform: translateY(-0.625rem) rotate(-45deg);
+}
+
   
   .nav-container {
     width: 100%;
@@ -168,23 +184,145 @@
   }
   @media (max-width: 400px) {
     .header {
-        padding: 1rem;
+        padding: 2rem;
     }
     
     .mobile-menu {
         display: flex;
         position: absolute;
-        left: 1rem;
-        top: 60%;
+        right: 1rem;
+        top: 2rem;
         transform: translateY(-50%);
+        width: 1.8rem;
+    height: 1.3rem;
     }
     
     .mobile-menu span {
-        width: 28px;
+      width: 1.8rem;
+      height: 0.2rem;
     }
     
     .nav-container {
         display: none;
     }
-  
+  .mobile-menu.active span:first-child {
+    transform: translateY(0.55rem) rotate(45deg);
+  }
+
+  .mobile-menu.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(0.9rem);
+  }
+
+  .mobile-menu.active span:nth-child(3) {
+    transform: translateY(-0.55rem) rotate(-45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: flex;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1001;
+  }
+
+  .nav-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    border-radius: 20px;
+  }
+
+  .nav-container.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .main-nav a {
+    font-size: 1.25rem;
+    color: #1B1B1B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .main-nav a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+  }
+
+  .social-nav {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .main-nav a {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.3s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .main-nav a:nth-child(1) { animation-delay: 0.1s; }
+  .main-nav a:nth-child(2) { animation-delay: 0.2s; }
+  .main-nav a:nth-child(3) { animation-delay: 0.3s; }
+  .main-nav a:nth-child(4) { animation-delay: 0.4s; }
+
+  .mobile-menu.active span {
+    background: #1B1B1B;
+  }
+
 }
