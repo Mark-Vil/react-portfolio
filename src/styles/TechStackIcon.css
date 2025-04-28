@@ -1,7 +1,7 @@
 /* TechStackIcon - Container */
 .tech-stack-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1.5rem;
   width: 100%;
   padding: 1rem;
@@ -103,4 +103,9 @@
 .tech-stack-group:hover .tech-stack-tooltip {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+@media (max-width: 371px) {
+  .tech-stack-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
 }
