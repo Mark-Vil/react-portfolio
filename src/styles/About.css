@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     color: var(--light-color);
+    height: 800px;
   }
   
   .about-container {
@@ -36,7 +37,7 @@
     color: var(--dark-color);
     font-weight: bold;
     text-transform: capitalize;
-    font-size: 3rem;
+    font-size: clamp(2rem, 0.1rem + 3vw, 1rem);
     margin-bottom: 80px;
     color: #1B1B1B;
   }
@@ -99,14 +100,14 @@
     border: 1px solid var(--dark-color);
   }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 920px) {
     .about-container {
       padding: 16px;
       margin-bottom: 50px;
     }
   
     .about-title {
-      font-size: 2rem;
+      font-size: clamp(0.1rem, 1vw + 1rem, 2rem);
       margin-bottom: 40px;
     }
   
@@ -118,6 +119,7 @@
     .about-text {
       grid-column: span 1;
       order: 2;
+      
     }
   
     .about-subtitle {
