@@ -1,0 +1,210 @@
+
+.portfolio-section {
+    isolation: isolate;
+    position: relative;
+    z-index: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-section {
+      padding: 0 10%;
+      margin-top: 0;
+    }
+  }
+  
+  
+  .portfolio-header {
+    text-align: center;
+    padding-bottom: 2.5rem;
+  }
+  
+  .portfolio-title {
+    display: inline-block;
+    font-size: 1.875rem; 
+    font-weight: 700;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(45deg, #38383a 10%, #211f24 93%);
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-title {
+      font-size: 3rem; 
+    }
+  }
+  
+  .portfolio-description {
+    color: rgba(0, 0, 0, 0.75); 
+    max-width: 42rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-description {
+      font-size: 1rem; 
+    }
+  }
+  
+  
+  
+  .portfolio-appbar {
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 1rem;
+    isolation: isolate;
+  }
+  .MuiAppBar-root.portfolio-appbar {
+    background: linear-gradient(135deg, #232526, #414345) !important; /* Dark gradient */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 1rem;
+    isolation: isolate;
+  }
+  
+  .portfolio-tabs .MuiTab-root.Mui-selected {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(20, 20, 20, 0.5)) !important;
+    color: white;
+  }
+  .portfolio-tabs {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .portfolio-tabs .MuiTab-root {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #9da5b0;
+    text-transform: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px 0;
+    margin: 8px;
+    border-radius: 12px;
+    z-index: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-tabs .MuiTab-root {
+      font-size: 1rem;
+    }
+  }
+  
+  .portfolio-tabs .MuiTab-root:hover {
+    color: #ffffff;
+    background-color: rgba(156, 153, 163, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .portfolio-tabs .MuiTab-root.Mui-selected {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+
+  }
+  
+  .portfolio-tabs .MuiTabs-indicator {
+    display: none;
+  }
+  
+
+  .tab-icon {
+    margin-bottom: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: all 0.3s ease;
+  }
+  
+
+  .portfolio-tabs .MuiTab-root:hover .tab-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+
+  .project-container,
+  .certificate-container,
+  .tech-stack-container {
+    display: grid;
+    gap: 1.25rem;
+  }
+  
+
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .project-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1536px) {
+    .project-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .certificate-container {
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .certificate-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .tech-stack-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 768px) {
+    .tech-stack-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .tech-stack-container {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .project-card,
+  .certificate-card,
+  .tech-stack-card {
+    width: 100%;
+  }
+
+
+  
+  .toggle-container {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+  
+
+  [data-aos="fade-up-right"],
+  [data-aos="fade-up"],
+  [data-aos="fade-up-left"] {
+    opacity: 0;
+    transition-property: opacity, transform;
+  }
+  
+  [data-aos="fade-up-right"].aos-animate,
+  [data-aos="fade-up"].aos-animate,
+  [data-aos="fade-up-left"].aos-animate {
+    opacity: 1;
+    transform: none;
+  }
+  

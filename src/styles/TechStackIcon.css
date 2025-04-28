@@ -1,0 +1,106 @@
+/* TechStackIcon - Container */
+.tech-stack-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.tech-stack-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: rgba(31, 41, 55, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tech-stack-group:hover {
+    background: rgba(51, 65, 85, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Icon Container */
+  .tech-stack-icon-wrapper {
+    position: relative;
+  }
+  
+
+  
+  .tech-stack-group:hover .tech-stack-icon-glow {
+    opacity: 0.5;
+  }
+  
+  /* Icon Image */
+  .tech-stack-icon {
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .tech-stack-group:hover .tech-stack-icon {
+    transform: scale(1.1);
+  }
+  
+  /* Text Label */
+  .tech-stack-label {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(148, 163, 184, 1);
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .tech-stack-group:hover .tech-stack-label {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  /* Tooltip for hover effect */
+.tech-stack-tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(27, 27, 27, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Triangle pointer for tooltip */
+.tech-stack-tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(27, 27, 27, 0.9);
+}
+
+/* Show tooltip on hover */
+.tech-stack-group:hover .tech-stack-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

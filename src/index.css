@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
 
 :root {
   font-family: 'Montserrat', system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -13,7 +13,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  scroll-behavior: smooth;
 }
+
+@custom-media --xs (max-width: 480px);
 
 ::-webkit-scrollbar {
   display: none;
