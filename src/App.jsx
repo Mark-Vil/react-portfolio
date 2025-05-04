@@ -7,6 +7,7 @@ import About from './components/About'
 import WelcomeScreen from './components/WelcomeScreen'
 import Portfolio from './components/Portfolio' 
 import Contact from './components/Contact' 
+import Experience from './components/Experience'
 import Blogs from './components/Blogs'
 import BlogDetail from './components/BlogDetail';
 import { blogs } from './blogs/blogsData';
@@ -54,6 +55,7 @@ function AppContent() {
             <Hero />
             <About />
             <Blogs />
+            <Experience />
             <Portfolio />
             <Contact />
           </>
