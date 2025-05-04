@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import zamboangaConnectImg from "../assets/zconnect.png";
+import pokedexImg from "../assets/pokedex.png";
 import wmsurmis from "../assets/wmsurmis.png";
 import cvdjms from "../assets/cvdjms.png";
 import coffeetearia from "../assets/coffeetearia.png";
@@ -50,36 +50,36 @@ const getAnimation = (index) => {
       Title: "WMSU Research Management System",
       Description: "A comprehensive digital platform for Western Mindanao State University that streamlines research proposal submissions, tracks approval workflows, archives completed studies, and generates analytics for academic research management.",
       Img: wmsurmis,
-      ProjectLink: "https://example-ecommerce.com",
-      TechStack: ["React", "Node.js", "MongoDB", "Stripe"],
-      githubLink: "https://github.com/yourusername/ecommerce"
+      ProjectLink: "https://wmsurmis.online",
+      TechStack: ["Bootstrap", "PHP", "JQUERY"],
+      Link: "https://wmsurmis.online"
     },
     {
       id: "project2",
       Title: "Teacher Evaluation System",
       Description: "A comprehensive platform for educational institutions to conduct, manage, and analyze teacher performance evaluations from peers.",
       Img: cvdjms,
-      ProjectLink: "https://weather-dashboard-demo.com",
-      TechStack: ["JavaScript", "OpenWeather API", "HTML", "CSS"],
-      githubLink: "https://github.com/yourusername/weather-app"
+      ProjectLink: "https://cvdjms.online",
+      TechStack: ["JavaScript", "PHP", "Bootstrap", "JQUERY"],
+      Link: "https://github.com/yourusername/weather-app"
     },
     {
       id: "project3",
       Title: "Coffee Tearia",
       Description: "An e-commerce platform for a coffee shop equipment supplier, featuring product catalogs, inventory management, ordering system, and customer relationship tools for coffee shop owners and baristas.",
       Img: coffeetearia,
-      ProjectLink: "https://task-manager-demo.com",
+      ProjectLink: "https://coffeetearia.shop",
       TechStack: ["React", "Redux", "Firebase", "Material UI"],
-      githubLink: "https://github.com/yourusername/task-manager"
+      Link: "https://github.com/yourusername/task-manager"
     },
     {
       id: "project4",
-      Title: "Zamboanga Connect",
-      Description: "A navigation helper website for the people of Zamboanga, providing local resources, services, and community information in an accessible format..",
-      Img: zamboangaConnectImg,
-      ProjectLink: "https://portfolio-example.com",
-      TechStack: ["React", "Tailwind CSS", "Framer Motion"],
-      githubLink: "https://github.com/yourusername/portfolio"
+      Title: "Pokedex",
+      Description: "A comprehensive pokemon catalog to train and simulate pokemon battle, stats based ba",
+      Img: pokedexImg,
+      ProjectLink: "https://poaakedex.netlify.app/",
+      TechStack: ["React", "Tailwind CSS",],
+      Link: "https://github.com/yourusername/portfolio"
     }
   ];
   
@@ -257,7 +257,13 @@ useEffect(() => {
             <div className="project-container">
               {displayedProjects.map((project, index) => (
                 <div key={index} className="project-card" data-aos={getAnimation(index)} data-aos-duration={getDuration(index)}>
-                  <CardProject {...project} />
+                  <CardProject 
+    Img={project.Img}
+    Title={project.Title}
+    Description={project.Description}
+    ProjectLink={project.ProjectLink || project.Link} 
+    id={project.id}
+  />
                 </div>
               ))}
             </div>

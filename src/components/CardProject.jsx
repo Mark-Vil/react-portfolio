@@ -1,24 +1,29 @@
 import React from 'react';
 import "../styles/CardProject.css";
-import { Link } from 'react-router-dom';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
-  const handleLiveDemo = (e) => {
-    if (!ProjectLink) {
-      console.log('ProjectLink is empty');
+const CardProject = ({ Img, Title, Description, ProjectLink, id }) => {
+  const hasLiveDemo = ProjectLink && ProjectLink.trim() !== "";
+
+  const formatUrl = (url) => {
+    if (!url) return '#';
+    
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      return `https://${url}`;
+    }
+    return url;
+  };
+
+  const handleClick = (e) => {
+    console.log("Link clicked:", ProjectLink);
+    
+    if (!hasLiveDemo) {
       e.preventDefault();
       alert('Live demo link is not available');
     }
   };
 
-  const handleDetails = (e) => {
-    if (!id) {
-      console.log('ID is empty');
-      e.preventDefault();
-      alert('Project details are not available');
-    }
-  };
+  const formattedLink = formatUrl(ProjectLink);
 
   return (
     <div className="card-project-group">
@@ -39,13 +44,14 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
             <p className="project-description">{Description}</p>
 
             <div className="button-section">
-              {ProjectLink ? (
+              {hasLiveDemo ? (
                 <a
-                  href={ProjectLink || '#'}
+                  href={formattedLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleLiveDemo}
+                  onClick={handleClick}
                   className="live-demo-link"
+                  style={{ cursor: 'pointer', zIndex: 10, position: 'relative' }}
                 >
                   <span className="live-demo-text">Live Demo</span>
                   <ExternalLink className="icon" />
@@ -53,7 +59,6 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
               ) : (
                 <span className="not-available-text">Demo Not Available</span>
               )}
-
             </div>
           </div>
 
