@@ -28,7 +28,8 @@ import firebaseIcon from "../assets/icons/firebase.svg";
 import muiIcon from "../assets/icons/MUI.svg";
 import pythonIcon from "../assets/icons/python.svg";
 import djangoIcon from "../assets/icons/django.svg";
-import sweetAlertIcon from "../assets/icons/SweetAlert.svg";
+import githubIcon from "../assets/icons/github.svg";
+import gitIcon from "../assets/icons/git.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -179,7 +180,9 @@ const techStacks = [
   { icon: viteIcon, language: "Vite" },
   { icon: firebaseIcon, language: "Firebase" },
   { icon: pythonIcon, language: "Python" },
-  { icon: djangoIcon, language: "Django" }
+  { icon: djangoIcon, language: "Django" },
+  { icon: githubIcon, language: "Github" },
+  { icon: gitIcon, language: "Git" }
 ];
 
 export default function Portfolio({ initialTab }) {
