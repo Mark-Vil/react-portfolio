@@ -19,7 +19,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch('http://wmsurmis.online/email/email-api.php', {
+      const response = await fetch('https://wmsurmis.online/email/email-api.php', {
         method: 'POST',
         credentials: 'include',
         headers: {
