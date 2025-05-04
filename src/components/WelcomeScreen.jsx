@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import "../styles/WelcomeScreen.css"; // Removed CSS import
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Github, Globe, User } from 'lucide-react';
 import AOS from 'aos';
@@ -17,34 +16,34 @@ const TypewriterEffect = ({ text }) => {
       } else {
         clearInterval(timer);
       }
-    }, 260); // Keep original speed
+    }, 260); 
 
     return () => clearInterval(timer);
   }, [text]);
 
   return (
-    <span className="inline-block"> {/* Changed from .typewriter-effect */}
+    <span className="inline-block">
       {displayText}
-      <span className="animate-blink">|</span> {/* Changed from .cursor */}
+      <span className="animate-blink">|</span> 
     </span>
   );
 };
 
 const BackgroundEffect = () => (
-  <div className="absolute inset-0 overflow-hidden -z-10"> {/* Added -z-10 */}
-    {/* Original .background-gradient */}
+  <div className="absolute inset-0 overflow-hidden -z-10"> 
+    
     <div className="absolute inset-0 bg-white blur-[60px] animate-pulse"></div>
-    {/* Original .background-gradient-to-tr */}
+   
     <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/10 via-transparent to-purple-900/10 blur-[40px] animate-float"></div>
   </div>
 );
 
 const IconButton = ({ Icon }) => (
-  // Combined .icon-button and .icon-content structure
+
   <div className="relative inline-block p-4 bg-black/50 rounded-full border border-white/10 transition-transform duration-300 hover:scale-110">
-    {/* Original .icon-glow */}
+
     <div className="absolute -inset-2 bg-gradient-to-r from-gray-800/20 to-gray-900/20 rounded-full blur-xl opacity-75 -z-10"></div> {/* Adjusted blur */}
-    <Icon className="relative w-6 h-6 text-white" /> {/* Added size and color */}
+    <Icon className="relative w-6 h-6 text-white" /> 
   </div>
 );
 
@@ -54,7 +53,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false, // Keep original AOS settings
+      once: false,
       mirror: false,
     });
 
@@ -62,13 +61,13 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       setIsLoading(false);
       setTimeout(() => {
         onLoadingComplete?.();
-      }, 1000); // Keep original timing
-    }, 4000); // Keep original timing
+      }, 1000);
+    }, 4000); 
 
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
 
-  // Keep Framer Motion variants as they are
+
   const containerVariants = {
     exit: {
       opacity: 0,
@@ -98,7 +97,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          // Original .welcome-screen combined with .main-container
+
           className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden bg-[#efefef]" // Added base bg, overflow hidden
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -107,9 +106,9 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
         >
           <BackgroundEffect />
 
-          {/* Original .content-wrapper */}
-          <div className="relative w-full max-w-3xl mx-auto text-center z-10"> {/* Added relative and z-10 */}
-              {/* Original .icons-section */}
+
+          <div className="relative w-full max-w-3xl mx-auto text-center z-10"> 
+
               <motion.div
                 className="flex justify-center gap-6 mb-12"
                 variants={childVariants}
@@ -121,16 +120,15 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                 ))}
               </motion.div>
 
-              {/* Original .welcome-text */}
+
               <motion.div
                 variants={childVariants}
-                className="mb-12" // Added margin bottom here instead of on h1
+                className="mb-12" 
               >
-                {/* Original .title */}
-                <h1 className="text-[42px] font-semibold text-[#1B1B1B]"> {/* Adjusted font size and color */}
+
+                <h1 className="text-[42px] font-semibold text-[#1B1B1B]"> 
                   <div>
-                    {/* Original .text-glow */}
-                    <span data-aos="fade-right" data-aos-delay="200" className="inline-block"> {/* Removed glow class */}
+                    <span data-aos="fade-right" data-aos-delay="200" className="inline-block"> 
                       Welcome
                     </span>{' '}
                     <span data-aos="fade-right" data-aos-delay="400" className="inline-block">
@@ -141,7 +139,6 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                     </span>
                   </div>
                   <div>
-                    {/* Original .text-highlight */}
                     <span data-aos="fade-up" data-aos-delay="800" className="inline-block"> {/* Removed highlight class */}
                       Portfolio
                     </span>{' '}
@@ -152,24 +149,23 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                 </h1>
               </motion.div>
 
-              {/* Original .website-link */}
+
               <motion.div
                 variants={childVariants}
                 data-aos="fade-up"
                 data-aos-delay="1200"
               >
-                {/* Original .link-button */}
+
                 <a
                   href="https://markvilliones.netlify.app"
                   className="relative inline-flex items-center gap-2 py-4 px-6 bg-black/20 rounded-full text-white no-underline transition-transform duration-300 hover:scale-105 group" // Added group for potential hover effects
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {/* Original .link-glow */}
+
                   <div className="absolute inset-0 bg-gradient-to-r from-gray-800/20 to-gray-900/20 rounded-full blur-xl -z-10"></div> {/* Adjusted blur */}
-                  {/* Original .link-icon */}
+
                   <Globe className="relative w-5 h-5 text-[#1c1b1d]" /> {/* Adjusted size */}
-                  {/* Original .link-text */}
                   <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-[#1c1c1d] to-[#2e2a2e]">
                     <TypewriterEffect text="markvilliones.netlify.app" />
                   </span>

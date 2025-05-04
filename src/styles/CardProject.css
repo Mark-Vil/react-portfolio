@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-    background: linear-gradient(135deg, #232526, #414345) !important;
+    background: rgba(31,41,55,0.7) !important;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease-in-out;
@@ -62,9 +62,8 @@
   .project-title {
     font-size: 1.25rem;
     font-weight: 600;
-    background: linear-gradient(to right, #cbd5e1, #e9d5ff);
+    color: rgb(241 245 249);
     -webkit-background-clip: text;
-
   }
   
   .project-description {
@@ -76,6 +75,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--color-slate-300);
   }
   
   /* Buttons */
@@ -120,7 +120,7 @@
   }
   
   .not-available-text {
-    color: rgba(107, 114, 128, 1);
+    color: var(--color-slate-300);
     font-size: 0.875rem;
   }
   
