@@ -54,7 +54,6 @@ function AppContent() {
           <>
             <Hero />
             <About />
-            <Blogs />
             <Experience />
             <Portfolio />
             <Contact />
@@ -62,7 +61,6 @@ function AppContent() {
         } />
         <Route path="/skills" element={<Portfolio initialTab={1} />} />
         <Route path="/projects" element={<Portfolio initialTab={0} />} />
-        <Route path="/blog/:id" element={<BlogDetail blogs={blogs} />} />
       </Routes>
 
       {showScrollTop && (
