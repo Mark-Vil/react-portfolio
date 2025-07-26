@@ -80,7 +80,7 @@ const Experience = () => {
       location: "Zamboanga City",
       period: "Mar 2023 - Dec 2024",
       description: "Designed and developed custom websites and web applications for small businesses and individual clients. Managed multiple projects simultaneously while meeting deadlines and exceeding client expectations through responsive design and SEO optimization.",
-      skills: ["React", "NextJS", "Tailwind", "MongoDB"]
+      skills: ["React", "NextJS", "Tailwind", "PostgreSQL"]
     },
     {
       position: "Web Developer",
@@ -88,7 +88,7 @@ const Experience = () => {
       location: "Zamboanga City",
       period: "Jun 2021 - Feb 2022",
       description: "Built static websites for local businesses, focusing on mobile responsiveness and modern design principles. Created user-friendly content management solutions allowing clients to easily update their websites without technical knowledge.",
-      skills: ["HTML", "CSS", "JavaScript", "PHP", "WordPress"]
+      skills: ["HTML", "CSS", "JavaScript", "PHP", "Django"]
     }
   ];
 

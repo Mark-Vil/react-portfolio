@@ -161,13 +161,6 @@ const Header = ({ onAboutClick }) => {
             About
           </a>
           <a
-            href="#blogs"
-            onClick={handleBlogsClick}
-            className="text-base font-medium mx-2 text-black relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in hover:after:w-full py-2 px-4 rounded-lg hover:bg-black/5 transition-colors duration-300"
-          >
-            Blogs
-          </a>
-          <a
             href="#experience"
             onClick={handleExperienceClick}
             className="text-base font-medium mx-2 text-black relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-in hover:after:w-full py-2 px-4 rounded-lg hover:bg-black/5 transition-colors duration-300"
