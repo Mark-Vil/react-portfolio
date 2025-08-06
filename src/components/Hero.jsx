@@ -59,10 +59,10 @@ const Hero = () => {
               data-aos-delay="800"
             >
               <a 
-                href=""
+                href="https://drive.google.com/file/d/1f-wKkq5Th8cz3LJFFYanMe7nYuxWSm_g/view?usp=drive_link"
                 className="flex justify-center items-center bg-[#1B1B1B] text-white py-2 px-4 sm:px-6 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 ease-in-out border-2 border-transparent hover:bg-white hover:text-black hover:border-black no-underline h-10 sm:h-11 md:h-12 lg:w-[100px] lg:h-[40px]" 
                 target="_blank" 
-                download
+                
               >
                 Resume
 
