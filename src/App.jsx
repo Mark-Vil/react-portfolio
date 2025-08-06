@@ -20,7 +20,7 @@ function AppContent() {
   
   useEffect(() => {
     const handleScroll = () => {
-      const blogsSection = document.getElementById('blogs');
+      const blogsSection = document.getElementById('experience');
       const contactSection = document.getElementById('contact');
       
       if (blogsSection && contactSection) {
