@@ -51,7 +51,7 @@ const getAnimation = (index) => {
       Description: "A comprehensive digital platform for Western Mindanao State University that streamlines research proposal submissions, tracks approval workflows, archives completed studies, and generates analytics for academic research management.",
       Img: wmsurmis,
       ProjectLink: "https://wmsurmis.online",
-      TechStack: ["Bootstrap", "PHP", "JQUERY"],
+      TechStack: ["Bootstrap 5", "PHP", "JQUERY","MySQL", "NextJS"],
       Link: "https://wmsurmis.online"
     },
     {
@@ -60,7 +60,7 @@ const getAnimation = (index) => {
       Description: "A comprehensive platform for educational institutions to conduct, manage, and analyze teacher performance evaluations from peers.",
       Img: cvdjms,
       ProjectLink: "https://cvdjms.online",
-      TechStack: ["JavaScript", "PHP", "Bootstrap", "JQUERY"],
+      TechStack: ["JavaScript", "PHP", "Bootstrap 5", "JQUERY"],
       Link: "https://github.com/yourusername/weather-app"
     },
     {
@@ -69,7 +69,7 @@ const getAnimation = (index) => {
       Description: "An e-commerce platform for a coffee shop equipment supplier, featuring product catalogs, inventory management, ordering system, and customer relationship tools for coffee shop owners and baristas.",
       Img: coffeetearia,
       ProjectLink: "https://coffeetearia.shop",
-      TechStack: ["React", "Redux", "Firebase", "Material UI"],
+      TechStack: ["NextJS", "ReactJS", "MYSQL", "Shadcn UI"],
       Link: "https://github.com/yourusername/task-manager"
     },
     {
@@ -78,7 +78,7 @@ const getAnimation = (index) => {
       Description: "A comprehensive pokemon catalog to train and simulate pokemon battle, stats based ba",
       Img: pokedexImg,
       ProjectLink: "https://poaakedex.netlify.app/",
-      TechStack: ["React", "Tailwind CSS",],
+      TechStack: ["ReactJS", "Typescript", "Tailwind CSS",],
       Link: "https://github.com/yourusername/portfolio"
     }
   ];

@@ -68,11 +68,11 @@ const Experience = () => {
   const experiences = [
     {
       position: "Web developer Intern",
-      company: "WMSU",
+      company: "WMSU Procurement",
       location: "Zamboanga City",
-      period: "Feb 2025 - Present",
-      description: "Supporting the development of the university's procurement system by implementing new features and improving user interfaces. Collaborating with senior developers to integrate database solutions and enhance system security protocols.",
-      skills: ["PHP", "JQuery", "Bootstrap 5", "MySQL", "React"]
+      period: "Feb 2025 - May 2025",
+      description: "Supporting the development of the university's procurement system by implementing new features and improving user interfaces. Collaborating with procurement officers to integrate database solutions and enhance system security protocols.",
+      skills: ["PHP", "Javascript", "JQuery", "Tailwind CSS", "MySQL", "NextJS"]
     },
     {
       position: "Freelance Web Developer",
@@ -80,15 +80,15 @@ const Experience = () => {
       location: "Zamboanga City",
       period: "Mar 2023 - Dec 2024",
       description: "Designed and developed custom websites and web applications for small businesses and individual clients. Managed multiple projects simultaneously while meeting deadlines and exceeding client expectations through responsive design and SEO optimization.",
-      skills: ["React", "NextJS", "Tailwind", "PostgreSQL"]
+      skills: ["ReactJS", "NextJS", "Tailwind", "Django", "MYSQL", "PHP"]
     },
     {
       position: "Web Developer",
       company: "Self Employed",
       location: "Zamboanga City",
       period: "Jun 2021 - Feb 2022",
-      description: "Built static websites for local businesses, focusing on mobile responsiveness and modern design principles. Created user-friendly content management solutions allowing clients to easily update their websites without technical knowledge.",
-      skills: ["HTML", "CSS", "JavaScript", "PHP", "Django"]
+      description: "Built dynamic websites for local businesses, focusing on mobile responsiveness and modern design principles. Created user-friendly content management solutions allowing clients to easily update their websites without technical knowledge.",
+      skills: ["HTML", "CSS", "Bootstrap 5", "Tailwind", "JavaScript", "PHP", "Django"]
     }
   ];
 
